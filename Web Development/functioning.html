@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <title>Document</title>
+    <style>
+      img {
+        height: 200px;
+        width: 200px;
+        border: 2px black solid;
+      }
+    </style>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container">
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarButtonsExample"
+          aria-controls="navbarButtonsExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+          </ul>
+          <!-- Left links -->
+
+          <div class="d-flex align-items-center">
+            <a
+              type="button"
+              class="btn btn-outline-success me-3"
+              id="userlink"
+              href=""
+            >
+              Username
+            </a>
+            <a
+              type="button"
+              class="btn btn-danger px-3 me-2"
+              id="signoutlink"
+              href=""
+            >
+              Sign Out
+            </a>
+          </div>
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+    <section class="vh-100" style="background-color: #eee">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                      Sign up
+                    </p>
+
+                    <form class="mx-1 mx-md-4">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input
+                            type="text"
+                            id="nameInp"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="form3Example1c"
+                            >Your Name</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input
+                            type="email"
+                            id="emailInp"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="form3Example3c"
+                            >Your Email</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input
+                            type="text"
+                            id="userInp"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="form3Example4c"
+                            >Username</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input
+                            type="password"
+                            id="passInp"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="form3Example4cd"
+                            >Password</label
+                          >
+                        </div>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="flexSwitchCheckChecked"
+                          checked
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexSwitchCheckChecked"
+                          >Keep me logged in</label
+                        >
+                      </div>
+                      <div
+                        class="form-check d-flex justify-content-center mb-5"
+                      >
+                        <input
+                          class="form-check-input me-2"
+                          type="checkbox"
+                          value=""
+                          id="form2Example3c"
+                        />
+                        <label class="form-check-label" for="form2Example3">
+                          I agree all statements in
+                          <a href="#!">Terms of service</a>
+                        </label>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-lg"
+                          id="sub_btn"
+                        >
+                          Register
+                        </button>
+                        &nbsp;
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-lg"
+                          id="loginbutton"
+                        >
+                          Log in
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div
+                    class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2 justify-content-center"
+                  >
+                    <div>
+                      <label>Image Name</label>
+                      <input type="text" id="namebox" />
+                      <label id="extlab"></label> <br /><br />
+                      <img id="myimg" /> <label id="upprogress"></label>
+                      <br /><br />
+                      <button id="selbtn">Select Image</button>
+                      <button id="upbtn">Upload Image</button>
+                      <button id="downbtn">Retrieve Image</button>
+                    </div>
+                    <div class="h-50 w-50 border overflow-auto" id="imagespace">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ----------------FIREBASE------------------->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBXtCjMez8dw82Oqux39X2AFSeba6p-w60",
+        authDomain: "kshitijtask.firebaseapp.com",
+        databaseURL: "https://kshitijtask-default-rtdb.firebaseio.com",
+        projectId: "kshitijtask",
+        storageBucket: "kshitijtask.appspot.com",
+        messagingSenderId: "941950928310",
+        appId: "1:941950928310:web:4265c56ad67e5c78552d17",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      import {
+        getStorage,
+        ref as sRef,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-storage.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+      const db = getDatabase();
+      // -------------REFERENCES----------------
+      const name = document.getElementById("nameInp");
+      const email = document.getElementById("emailInp");
+      const username = document.getElementById("userInp");
+      const pass = document.getElementById("passInp");
+      const submit = document.getElementById("sub_btn");
+      const authen = document.getElementById("loginbutton");
+
+      let userlink = document.getElementById("userlink");
+      let signoutlink = document.getElementById("signoutlink");
+      var currentUser = null;
+      // ---------------VALIDATION---------------
+      function isEmptyOrSpaces(str) {
+        return str === null || str.match(/^ *$/) !== null;
+      }
+      function Validation() {
+        let nameregex = /^[a-zA-Z\s]+$/;
+        let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
+        let userregex = /^[a-zA-Z0-9]{5,}$/;
+        if (
+          isEmptyOrSpaces(name.value) ||
+          isEmptyOrSpaces(email.value) ||
+          isEmptyOrSpaces(username.value) ||
+          isEmptyOrSpaces(pass.value)
+        ) {
+          alert("you cannot left any field empty");
+          return false;
+        }
+        if (!nameregex.test(name.value)) {
+          alert("the name should only contain alphabets!");
+          return false;
+        }
+        if (!emailregex.test(email.value)) {
+          alert("enter a valid email");
+          return false;
+        }
+        if (!userregex.test(username.value)) {
+          alert(
+            "-username can only be alphanumeric\n-username must be at least 5 characters"
+          );
+          return false;
+        }
+        return true;
+      }
+      // ----------------REGISTER USER TO FIREBASE----------------
+      function RegisterUser() {
+        if (!Validation()) {
+          return;
+        }
+        const dbRef = ref(db);
+        get(child(dbRef, "UsersList/" + username.value)).then((snapshot) => {
+          if (snapshot.exists()) {
+            alert("Account Already Exist!");
+          } else {
+            set(ref(db, "UsersList/" + username.value), {
+              fullname: name.value,
+              email: email.value,
+              username: username.value,
+              password: encPass(),
+            })
+              .then(() => {
+                alert("user added successfully");
+              })
+              .catch((error) => {
+                alert("error" + error);
+              });
+          }
+          window.location = "login.html";
+        });
+      }
+      // -----------------ENCRYPTION-----------------
+      function encPass() {
+        var pass12 = CryptoJS.AES.encrypt(pass.value, pass.value);
+        return pass12.toString();
+      }
+      // ----------------AUTHENTICATION--------------------
+      function AuthenticateUser() {
+        window.alert("Log in iniated");
+        const dbref = ref(db);
+        console.log(dbref);
+        get(child(dbref, "UsersList/" + username.value)).then((snapshot) => {
+          if (snapshot.exists()) {
+            let dbpass = decPass(snapshot.val().password);
+            if (dbpass == pass.value) {
+              login(snapshot.val());
+            } else {
+              alert("user does not exist");
+            }
+          } else {
+            alert("username or password is invalid");
+          }
+        });
+      }
+      // -----------------DECRYPTION-----------------
+      function decPass(dbpass) {
+        var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
+        return pass12.toString(CryptoJS.enc.Utf8);
+      }
+      // ------------------LOGIN-----------------
+      function login(user) {
+        let keepLoggedIn = document.getElementById(
+          "flexSwitchCheckChecked"
+        ).checked;
+        window.alert("Login Successful");
+        if (!keepLoggedIn) {
+          sessionStorage.setItem("user", JSON.stringify(user));
+          window.location = "login.html";
+        } else {
+          localStorage.setItem("keepLoggedIn", "yes");
+          localStorage.setItem("user", JSON.stringify(user));
+          window.location = "login.html";
+        }
+      }
+      // ---------------ASSIGN THE EVENT-----------------
+      submit.addEventListener("click", RegisterUser);
+      authen.addEventListener("click", AuthenticateUser);
+      // -------------------FUNCTIONS-----------------------
+      function getUsername() {
+        window.alert("Fetching username");
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+        if (keepLoggedIn == "yes") {
+          currentUser = JSON.parse(localStorage.getItem("user"));
+        } else {
+          currentUser = JSON.parse(sessionStorage.getItem("user"));
+        }
+      }
+      function Signout() {
+        window.alert("SignOut iniated");
+        sessionStorage.removeItem("user");
+        localStorage.removeItem("user");
+        localStorage.removeItem("keepLoggedIn");
+        window.location = "login.html";
+      }
+      // --------------WINDOW ONLOAD--------------------
+      window.onload = function () {
+        getUsername();
+        if (currentUser == null) {
+          userlink.innerText = "Create New Account";
+          userlink.classList.replace("nav-link", "btn");
+          userlink.classList.add("btn-primary");
+          // userlink.href = "register.html";
+          signoutlink.innerText = "Login";
+          signoutlink.classList.replace("nav-link", "btn");
+          signoutlink.classList.add("btn-success");
+          // signoutlink.href = "login.html";
+        } else {
+          window.alert("Window load with user ocurred");
+          let path=`UsersList/${currentUser.username}/allImages`;
+          userlink.innerText = currentUser.username;
+          userlink.classList.replace("btn", "nav-link");
+          userlink.classList.remove("btn-primary");
+          userlink.href = "/";
+          signoutlink.innerText = "Sign Out";
+          signoutlink.classList.replace("btn", "nav-link");
+          signoutlink.classList.remove("btn-success");
+          signoutlink.addEventListener("click", Signout);
+          showImages();
+        }
+      };
+        // -------------VARIABLES AND REFERENCES--------------
+      var files = [];
+      var reader = new FileReader();
+      var namebox = document.getElementById("namebox");
+      var extlab = document.getElementById("extlab");
+      var myimg = document.getElementById("myimg");
+      var proglab = document.getElementById("upprogress");
+      var SelBtn = document.getElementById("selbtn");
+      var UpBtn = document.getElementById("upbtn");
+      var DownBtn = document.getElementById("downbtn");
+      var input = document.createElement("input");
+      input.type = "file";
+      input.onchange = (e) => {
+        files = e.target.files;
+        var extention = GetFileExt(files[0]);
+        var name = GetFileName(files[0]);
+        namebox.value = name;
+        extlab.innerHTML = extention;
+        reader.readAsDataURL(files[0]);
+      };
+      reader.onload = function () {
+        myimg.src = reader.result;
+      };
+
+      //   --------------SELECTION------------------
+      SelBtn.onclick = function () {
+        input.click();
+      };
+      function GetFileExt(file) {
+        var temp = file.name.split(".");
+        var ext = temp.slice(temp.length - 1, temp.length);
+        return "." + ext[0];
+      }
+      function GetFileName(file) {
+        var temp = file.name.split(".");
+        var fname = temp.slice(0, -1).join(".");
+        return fname;
+      }
+      //   ----------------UPLOAD PROCESS-------------------
+      async function UploadProcess() {
+        var ImgToUpload = files[0];
+        var ImgName = namebox.value + extlab.innerHTML;
+        if (!ValidateName()) {
+          alert('name cannot contain ".","#","$","[", or "]"');
+          return;
+        }
+        const metaData = {
+          contentType: ImgToUpload.type,
+        };
+        const storage = getStorage();
+        const stroageRef = sRef(storage, "Images/" + ImgName);
+        const UploadTask = uploadBytesResumable(
+          stroageRef,
+          ImgToUpload,
+          metaData
+        );
+        UploadTask.on(
+          "state-changed",
+          (snapshot) => {
+            var progess =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            proglab.innerHTML = "Upload " + progess + "%";
+          },
+          (error) => {
+            alert("error: image not uploaded!");
+          },
+          () => {
+            getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+              SaveURLtoRealtimDB(downloadURL);
+            });
+          }
+        );
+      }
+      //   --------FUNCTIONS FOR REALTIME DATABASE-------------
+      function SaveURLtoRealtimDB(URL) {
+        window.alert("Saving image to DataBase");
+        var name = namebox.value;
+        var ext = extlab.innerHTML;
+        if(currentUser==null)
+        {
+          window.alert("Please log in first!");
+          return;
+        }
+        let path=`UsersList/${currentUser.username}/allImages/`;
+        set(ref(db, path + name), {
+          ImageName: name + ext,
+          ImgUrl: URL,
+        });
+      }
+      function GetUrlfromRealtimDB() {
+        var name = namebox.value;
+        var dbRef = ref(db);
+        if(currentUser==null)
+        {
+          window.alert("Please log in first!");
+          return;
+        }
+        let path=`UsersList/${currentUser.username}/allImages/`;
+        get(child(dbRef, path + name)).then((snapshot) => {
+          if (snapshot.exists()) {
+            myimg.src = snapshot.val().ImgUrl;
+          }
+        });
+      }
+      function showImages(){
+        var dbRef = ref(db);
+        var container=document.getElementById("imagespace");
+        let path=`UsersList/${currentUser.username}/allImages`;
+        console.log(path);
+        get(child(dbRef,path)).then((snapshot)=>{
+          snapshot.forEach(function(childSnapshot){
+            var key=childSnapshot.key;
+            var childData=childSnapshot.val();
+            container.innerHTML+="<img src='" + childData.ImgUrl + "' alt='Image' />";
+          });
+        })
+      }
+      function ValidateName() {
+        var regex = /[\.#$\[\]]/;
+        return !regex.test(namebox.value);
+      }
+      UpBtn.onclick = UploadProcess;
+      DownBtn.onclick = GetUrlfromRealtimDB;
+    </script>
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+    ></script>
+  </body>
+</html>

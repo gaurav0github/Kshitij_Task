@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <title>Kshitij</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="icon" href="images.png" type="image/gif" sizes="16x16" />
+  </head>
+  <body>
+    <nav class="navbar shadow-lg sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images.png" width="30" height="30" class="d-inline-block align-top mx-0" alt="" />
+        <span id="logo-name">Kshitij</span>
+      </a>
+      <button class="navbar-toggler first-button" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#myNavbarToggler7"
+        aria-controls="myNavbarToggler7" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <div class="animated-icon1"><span></span><span></span><span></span></div>
+      </button>
+
+      <div class="collapse navbar-collapse my-navbar mr-2" id="myNavbarToggler7">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active mr-2 my-nav">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item active mr-2 my-nav">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item active dropdown mr-2 my-nav">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Our Events
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Event1</a>
+              <a class="dropdown-item" href="#">Event2</a>
+              <a class="dropdown-item" href="#">Event3</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline mr-3 my-nav">
+          <a class="btn btn-outline-success"
+          data-toggle="modal" id="signoutlink" href="/login.html"
+          data-target=".log-sign" type="button">Log in</a>
+        </form>
+        <form class="form-inline my-1 my-nav">
+          <a href="/main.html" class="btn btn-primary">Go to My Photos</a>
+        </form>
+      </div>
+    </nav>
+    <div
+      id="carouselExampleSlidesOnly"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="bgImg.jpg"
+            class="d-block w-100 h-10 bgimg"
+            alt="..."
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h1 class="quote">Reader today, leader tomorrow</h1>
+            <br />
+            <a href="/main.html" type="button" class="btn btn-primary btn-lg">
+              Go to My Photos
+            </a>
+            <br /><br /><br /><br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center slider-header">At a Glance</p>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="1.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="2.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="3.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="4.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="5.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="6.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="7.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="8.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="9.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="10.jpg">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="card text-center">
+      <div class="card-header">
+        <a href="" class="mr-3">
+          <i class="fab fa-facebook-f fa-2x" style="color: #3b5998"></i>
+        </a>
+        <a href="" class="mr-3">
+          <i class="fab fa-twitter fa-2x" style="color: #55acee"></i>
+        </a>
+        <a href="" class="mr-3">
+          <i class="fab fa-instagram fa-2x" style="color: #ac2bac"></i>
+        </a>
+        <a href="" class="mr-3">
+          <i class="fab fa-linkedin-in fa-2x" style="color: #0082ca"></i>
+        </a>
+        <a href="" class="mr-3">
+          <i class="fab fa-github fa-2x" style="color: #333333"></i>
+        </a>
+        <a href="" class="mr-3">
+          <i class="fab fa-whatsapp fa-2x" style="color: #25d366"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Kshitij</h5>
+        <p class="card-text">
+          The Literary Society
+        </p>
+      </div>
+      <div class="card-footer text-muted">
+        © 2023 Copyright | All Rights Reserved
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- ----------------FIREBASE------------------->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBXtCjMez8dw82Oqux39X2AFSeba6p-w60",
+        authDomain: "kshitijtask.firebaseapp.com",
+        databaseURL: "https://kshitijtask-default-rtdb.firebaseio.com",
+        projectId: "kshitijtask",
+        storageBucket: "kshitijtask.appspot.com",
+        messagingSenderId: "941950928310",
+        appId: "1:941950928310:web:4265c56ad67e5c78552d17",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      import {
+        getStorage,
+        ref as sRef,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-storage.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        update,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-database.js";
+      const db = getDatabase();
+      // -------------REFERENCES----------------
+      let signoutlink = document.getElementById("signoutlink");
+      var currentUser = null;
+      // -------------------FUNCTIONS-----------------------
+      function getUsername() {
+        // window.alert("Fetching username");
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+        if (keepLoggedIn == "yes") {
+          currentUser = JSON.parse(localStorage.getItem("user"));
+        } else {
+          currentUser = JSON.parse(sessionStorage.getItem("user"));
+        }
+      }
+      function Signout() {
+        sessionStorage.removeItem("user");
+        localStorage.removeItem("user");
+        localStorage.removeItem("keepLoggedIn");
+        window.alert("Signed out successfully");
+        window.location = "login.html";
+      }
+      function Login(){
+        // window.alert("Login Initiated");
+        window.location = "login.html";
+      }
+      // --------------WINDOW ONLOAD--------------------
+      window.onload = function () {
+        getUsername();
+        if (currentUser == null) {
+          signoutlink.innerText = "Sign In";
+          signoutlink.addEventListener("click", Login);
+        } else {
+          // window.alert("Window load with user ocurred");
+          signoutlink.innerText = "Sign Out";
+          signoutlink.addEventListener("click", Signout);
+        }
+      };
+      </script>
+
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+  </body>
+</html>
